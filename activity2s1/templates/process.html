@@ -1,0 +1,24 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+
+    <title>Processing</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Processing Data Submitted from My Blog</h1>
+
+        {% if gender == "Female" %}
+            <p>Ms. {{name}}</p>
+        {% elif gender == "Male" %}
+            <p>Mr. {{name}}</p>
+        {% else %}
+            <p>Whatever {{name}}</p>
+        {% endif %}
+        <a href="/hobbies">See Hobbies</a>
+    </div>   
+</body>
+</html>

@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    }
+
+#wrapper {
+    width: 900px;
+    height: auto;
+    background-color: rgb(245, 239, 239);
+    margin: 10px auto;
+    padding: 25px;
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+
+img {
+    width: 50%;
+    margin: 5% 25%;
+}
+
+p , a {
+    margin: 5%;
+    font-size: 16px;
+}
+
+#collect_data {
+    width: 50%;
+    margin: 5% 25%;
+    height: auto;
+    padding: 20px 10px;
+    background-color: white;
+    display: inline-block;
+    vertical-align: top;
+}
+
+#collect_data label {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 3% 0%;
+    width: 40%;
+    display:inline-block;
+}
+
+#collect_data input[type="text"] {
+    padding: 10px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+
+#collect_data input[type="submit"] {
+    padding: 10px;
+    margin: 5% 25%;
+    font-weight: bold;
+    font-size: 15px;
+    width: 100px;
+}

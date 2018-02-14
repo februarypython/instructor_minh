@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/styles.css')}}">
+
+    <title>My Blog</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Blog of {{ name }}</h1>
+        <img src="{{ url_for('static', filename=photo) }}" alt="photo of blogger">
+
+        <form id="collect_data" action="/process" method="post">
+            <label for="name">Your Name:</label>
+            <input type="text" name="name" placeholder="Enter name"><br>
+            <label for="location">Your Location:</label>
+            <select name="location" placeholder="Select location">
+                <option value="empty">**Choose Location**</Enter></option> 
+                <option value="Chicago">Chicago</option> 
+                <option value="Dallas">Dallas</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Seattle">Seattle</option>
+                <option value="Silicon Valley">Silicon Valley</option>
+                <option value="Tulsa">Tulsa</option>
+                <option value="Washington DC">DC</option>
+                <option value="Online">Online</option>
+            </select><br>
+            <label for="gender">Gender:</label>
+            <select name="gender">
+                <option value="empty">**Choose Gender**</Enter></option> 
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>   
+</body>
+</html>
