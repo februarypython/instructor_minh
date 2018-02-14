@@ -1,0 +1,14 @@
+<html>
+    <h1>My name is Shannon.</h1>
+    <img src="{{ url_for('static', filename='cat.jpeg') }}"  alt="cat">
+    <form action="/process" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+        <label for="gender">Gender:</label>
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="female">Female
+        <label for="location">Location:</label>
+        <input type="text" name="location">
+        <input type="submit" value="Submit">
+    </form>
+</html>
