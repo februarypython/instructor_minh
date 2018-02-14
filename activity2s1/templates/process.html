@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Process</title>
+    </head>
+    <body>
+        {% if gender1 == "male" or gender == "Male" %}
+            <h1> Hello Mr. {{ name1 }} </h1>
+        {% endif %}
+        {% if gender1 == "female" or gender == "Female" %}
+            <h1> Hello Mrs. {{ name1 }} </h1>
+        {% endif %}
+    </body>
+</html>
