@@ -7,15 +7,15 @@
     <title>Document</title>
 </head>
 <body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <p>{{message}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <h2>Welcome to my app. Please login or register!</h2>
     <fieldset>
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                <p>{{message}}</p>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
         <legend>Register</legend>
         <form method="post" action="/process_form/register">
             <input type="hidden" name="action" value="register">
@@ -25,7 +25,6 @@
             Password: <input type="password" name="password"><br>
             <input type="submit" value="Register">
         </form>
-
     </fieldset>
     <fieldset>
         <form method="post" action="/process_form/login">
