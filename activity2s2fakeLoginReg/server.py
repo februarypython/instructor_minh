@@ -10,7 +10,7 @@ def index():
     return redirect("/home")
   return render_template("index.html")
 
-@app.route("/process_info/<action>", methods=["POST"])
+@app.route("/process_form/<action>", methods=["POST"])
 def process(action):
   if "users" not in session:
     session["users"] = []
@@ -19,10 +19,14 @@ def process(action):
     flash("Thanks for registering, please login")
     return redirect("/")
   elif action == "login":
+    #for loop through each user in session and checks email and password. If match, set session["email"] and redirect to home
     for user in session["users"]:
       if user["email"] == request.form["email"] and user["password"] == request.form["password"]:
         session["email"] = user["email"]
         return redirect("/home")
+    #flash a message and redirect to index
+    flash("Wrong email password combination")
+    return redirect("/")
   else:
     return redirect("/")
 

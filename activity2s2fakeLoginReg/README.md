@@ -3,7 +3,7 @@ Activity for this week - Create a fake login page that registers user data or "l
 Should have 4 routes - 
 "/" -> 
     Checks if a user has "logged on", if they have redirect to "/home" otherwise render html for login and registration
-"/process_info/<action>" ->
+"/process_form/<action>" ->
     Either checks user info is in session or creates a new user. 
 
     Registration should check to see if information is a duplicate or not.

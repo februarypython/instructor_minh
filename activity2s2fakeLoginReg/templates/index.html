@@ -17,7 +17,7 @@
             {% endif %}
         {% endwith %}
         <legend>Register</legend>
-        <form method="post" action="/process_info/register">
+        <form method="post" action="/process_form/register">
             <input type="hidden" name="action" value="register">
             First Name: <input type="text" name="first_name">
             Last Name: <input type="text" name="last_name">
@@ -28,7 +28,7 @@
 
     </fieldset>
     <fieldset>
-        <form method="post" action="/process_info/login">
+        <form method="post" action="/process_form/login">
             <input type="hidden" name="action" value="login">
             Email: <input type="text" name="email">
             Password: <input type="password" name="password"><br>
