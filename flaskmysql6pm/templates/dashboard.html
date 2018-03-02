@@ -7,6 +7,7 @@
     <title>Twitter User Dashboard</title>
 </head>
 <body>
+    <a href="/logout">logout</a>
     <h2>Add a Tweet</h2>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
@@ -27,14 +28,29 @@
       <tr>
         <th>Date</th>
         <th>Tweet</th>
+        <th>Posted by</th>
       </tr>
       {% for msg in all_tweets: %}
+        {% if msg.users_id == session["id"] or msg.users_id in leader_ids %}
       <tr>
         <td>{{ msg['tweet_date'] }}</td>
         <td>{{ msg['content'] }}</td>
+        <td>{{ msg['username'] }}</td>
       </tr>
+        {% endif %}
       {% endfor %}
     </table>
-
+    <fieldset>
+        <legend>All Users</legend>
+        <ul>
+        {% for user in filtered_users %}
+            {% if user.id != session["id"] and user.id not in leader_ids %}         
+            <li>{{user.username}} <a href="/follow/{{user.id}}">Follow</a></li>
+            {% elif user.id != session["id"] %}
+            <li>{{user.username}} <a href="/unfollow/{{user.id}}">unfollow</a></li>
+            {% endif %}            
+        {%endfor%}
+        </ul>
+    </fieldset>
 </body>
 </html>
