@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello {{user.username}},</h1> <a href="/logout">Log out</a>
+    <form action="/tweet/create" method="POST">
+        <input type="text" name="tweet">
+        <input type="submit" name="">
+    </form>
+    {% for tweet in tweets %}
+        {% if tweet.users_id == session["logged_id"]%}
+            <p>{{tweet.tweet}} - {{tweet.created_at}} <a href="/like/{{tweet.id}}">Like</a></p>
+        {% else %}
+            {% for follow in following_ids %}
+                {% if tweet.users_id == follow.leader %}
+                <p>{{tweet.tweet}} - {{tweet.created_at}} <a href="/like/{{tweet.id}}">Like</a></p>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    {% endfor %}
+    <fieldset >
+        <legend>Other users</legend>
+            {% for user in users %}
+                {% if user.id != session["logged_id"] %}
+                <p>{{user.username}} <a href="/follow/{{user.id}}">Follow</a></p>
+            {% endif %}
+        {% endfor %}
+    </fieldset>
+</body>
+</html>
